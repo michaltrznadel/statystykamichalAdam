@@ -16,7 +16,6 @@ reg_log <- glm(plec ~ liczbazgonow + ludnosc, family = "binomial")
 summary(reg_log)
 
 
-
 #Jeśli pvalue <0.05, w Twoim przypadku 
 #tylko wyraz wolny przekracza przedział ufności, 
 #ale to wyraz wolny, nie da się go wyrzucić z modelu, 
