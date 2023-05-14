@@ -14,15 +14,7 @@ plec <- c(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1)
 
 reg_log <- glm(plec ~ liczbazgonow + ludnosc, family = "binomial")
 summary(reg_log)
-
-
-
-#Jeśli pvalue <0.05, w Twoim przypadku 
-#tylko wyraz wolny przekracza przedział ufności, 
-#ale to wyraz wolny, nie da się go wyrzucić z modelu, 
-#więc ogólnie można najwyżej napisać, że nie można interpretować 
-#za bardzo modelu przy zerowych zmiennych objaśniających, 
-#bo wynik (wyraz wolny) byłby niewiarygodny. 
+exp(reg_log$coefficients)
 
 # Call:
 #   glm(formula = plec ~ liczbazgonow + ludnosc, family = "binomial")
@@ -35,7 +27,7 @@ summary(reg_log)
 #   Estimate Std. Error z value Pr(>|z|)  
 # (Intercept)  -3.964e-01  9.249e-01  -0.429   0.6682  
 # liczbazgonow  9.010e-04  3.637e-04   2.478   0.0132 *
-#   ludnosc      -1.201e-05  4.848e-06  -2.477   0.0132 *
+#   ludnosc      -1.201e-05e  4.848e-06  -2.477   0.0132 *
 #   ---
 #   Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 # 
