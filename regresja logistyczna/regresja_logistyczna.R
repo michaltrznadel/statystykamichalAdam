@@ -14,6 +14,7 @@ plec <- c(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1)
 
 reg_log <- glm(plec ~ liczbazgonow + ludnosc, family = "binomial")
 summary(reg_log)
+plot(reg_log)
 exp(reg_log$coefficients)
 
 # Call:
