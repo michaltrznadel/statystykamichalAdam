@@ -22,8 +22,6 @@ summary(result_dane)
 plot(result_dane)
 biplot(result_dane)
 
-
-##############WYNIKI#################
 # > summary(result_dane)
 # Importance of components:
 #   Comp.1       Comp.2       Comp.3       Comp.4
@@ -45,13 +43,3 @@ biplot(result_dane)
 # Proportion Var   0.25   0.25   0.25   0.25
 # Cumulative Var   0.25   0.50   0.75   1.00
 
-##############OPIS#################
-#
-#1. Summary pierwsza składowa wyjaśnia 79,44% wariancji wspólnej wszystkich zmiennych
-# druga 99,999% a trzecia i czwarta już 100% - dlatego należy przyjąć dwie główne składowe
-#2. BIPLOT widać wysoką korelację dodatnią między stopą bezrobocia, a przedszkolami
-#3. BIPLOT Nowoutworzone miejsca pracy i absolwanci tworzą spory kąt rozwarty co wskazuje na ujemną korelacje miedzy nimi
-#4. BIPLOT Nowe miejsca pracy mają największy wpływ na Comp1 
-# Na Comp2 największy wpływ mają absolwenci
-# (Stopa bezrobocia COMP1 i nowemiejsca pracy COMP2)
-#5. PLOT Wydać, że 2 piersze składowe copm 1 comp2 przechwytują w większosć danych.
