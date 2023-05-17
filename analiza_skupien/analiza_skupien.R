@@ -1,13 +1,25 @@
 library(mlbench)
 spirale<-mlbench.spirals(240,1.5,0.03)
 data<-spirale$x
-klasy<-as.numeric(3)
-colornames <- c("red","blue" )
 data
-plot(data,col=colornames[klasy],ask=TRUE)
+klasy<-as.numeric(spirale$classes)
+klasy
+colornames <- c("red","blue")
+#plot(data,col=colornames[klasy],ask=TRUE)
+
+#getData Start
+
+#data <- read.csv2("C:/statystykamichalAdam/analiza_skupien/Dane_zp_2007.csv", header=TRUE, fileEncoding="latin1")
+#data<- data[,c(2,3)]
+#data
+#getData Start
 
 
-#spectral method end
+#standarisation Start
+#standarisation end
+
+
+#spectral start
 windows()
 # nc - number_of_clusters
 min_nc=2
@@ -28,9 +40,9 @@ print(clusters[which.max(res[,2]),])
 plot(res, type="p", pch=0, xlab="Number of clusters", ylab="G1", xaxt="n")
 axis(1, c(min_nc:max_nc))
 print(cl2$sigma)
-cRand<-comparing.Partitions(as.vector(clusters[which.max(res[,2]),]),as.vector(klasy),type="crand")
-print(cRand)
+#cRand<-comparing.Partitions(as.vector(clusters[which.max(res[,2]),]),as.vector(klasy),type="crand")
+#print(cRand)
 
 kl=clusters[which.max(res[,2]),]
 plot(data, col=rainbow(2)[kl])
-#spectral method end
+#spectral end
