@@ -1,11 +1,22 @@
-library(clusterSim)
-set.seed(123)           # Ustawienie generatora liczb losowych
+
 
 # Wczytanie zbioru danych
-xx <-read.csv2("C:/statystykamichalAdam/analiza_skupien/Dane_zp_2007.csv", header=TRUE, fileEncoding="latin1")
-x <- as.matrix(xx[, 2:ncol(xx)])
+koszty_eksploatacji_mieszkan <-read.csv2("C:/statystykamichalAdam/analiza_skupien/koszty_eksploatacji_mieszkan2020.csv", header=TRUE, fileEncoding="UTF-8")
+
+mieszkania <-read.csv2("C:/statystykamichalAdam/analiza_skupien/Powierzchniamieszkalna2020.csv", header=TRUE, fileEncoding="UTF-8")
+wojewodztwa <- mieszkania[,2]
+ludnosc <-read.csv2("C:/statystykamichalAdam/analiza_skupien/LUDN_2020.csv", header=TRUE, fileEncoding="UTF-8")
+ludnosc
+zaleglosciWOplatach <-read.csv2("C:/statystykamichalAdam/analiza_skupien/GOSP_zaleglosci_w_oplatach_2020.csv", header=TRUE, fileEncoding="UTF-8")
+zaleglosciWOplatach
+#xx <-read.csv2("C:/statystykamichalAdam/analiza_skupien/Dane_zp_2007.csv", header=TRUE, fileEncoding="latin1")
+#x <- as.matrix(xx[, 2:ncol(xx)])
+powierzchniaNaMieszkanca <- mieszkania[,3]/ludnosc[,3]/1000
+koszty_eksploatacji_mieszkanNaM2 <- koszty_eksploatacji_mieszkan[,51]
+zalgeloscWOplatachNamieszkancaWzgledemSpoldzielniMieskzniowychNaMIeszkanca <- zaleglosciWOplatach[,4]/ludnosc[,3]
+x <- cbind(zalgeloscWOplatachNamieszkancaWzgledemSpoldzielniMieskzniowychNaMIeszkanca, powierzchniaNaMieszkanca, koszty_eksploatacji_mieszkanNaM2)
+
 options(OutDec=",")
-x
 # Wyb?r formu?y normalizacji warto?ci zmiennych
 z <- data.Normalization(x, type="n1")
 z
@@ -30,7 +41,7 @@ clopt<-clusters[which.min(res[,2]),]
 print(paste("min G3 dla",(min_nc:max_nc)[which.min(res[,2])],"klas=",min(res[,2])))
 
 print("Prezentacja klasyfikacji wynikowej", quote=FALSE)
-cl_wyn1 <- data.frame(xx[, 1], clopt)
+cl_wyn1 <- data.frame(wojewodztwa, clopt)
 colnames(cl_wyn1) <- c("wojew?dztwa", "klasa")
 print(cl_wyn1)
 
@@ -54,4 +65,4 @@ print(desc[,,2])
 
 windows()
 plot(hc, hang=-1, labels=NULL, main=NULL, sub=NULL, ann=FALSE)
-title(xlab="Numer klasy", ylab="Poziom po??czenia klas")
+title(xlab="Numer klasy", ylab="Poziom połączenia klas")
