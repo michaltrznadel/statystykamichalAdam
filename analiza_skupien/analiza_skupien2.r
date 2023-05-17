@@ -13,16 +13,20 @@ zaleglosciWOplatach
 #x <- as.matrix(xx[, 2:ncol(xx)])
 powierzchniaNaMieszkanca <- mieszkania[,3]/ludnosc[,3]/1000
 koszty_eksploatacji_mieszkanNaM2 <- koszty_eksploatacji_mieszkan[,51]
-zalgeloscWOplatachNamieszkancaWzgledemSpoldzielniMieskzniowychNaMIeszkanca <- zaleglosciWOplatach[,4]/ludnosc[,3]
+zalgeloscWOplatachNamieszkancaWzgledemSpoldzielniMieskzniowychNaMIeszkanca <- zaleglosciWOplatach[,4]/ludnosc[,3])
 x <- cbind(zalgeloscWOplatachNamieszkancaWzgledemSpoldzielniMieskzniowychNaMIeszkanca, powierzchniaNaMieszkanca, koszty_eksploatacji_mieszkanNaM2)
-
+x
 options(OutDec=",")
+
+
 # Wyb?r formu?y normalizacji warto?ci zmiennych
 z <- data.Normalization(x, type="n1")
 z
 # Wyb?r miary odleg?o?ci
 z <- as.data.frame(z)
 d <- dist.GDM(z, method="GDM1")
+d
+
 
 print("Ustalenie liczby klas z wykorzystaniem indeksu G3", quote=FALSE)
 min_nc=2
