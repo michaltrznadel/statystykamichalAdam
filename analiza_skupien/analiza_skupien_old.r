@@ -13,7 +13,7 @@ zaleglosciWOplatach
 #x <- as.matrix(xx[, 2:ncol(xx)])
 powierzchniaNaMieszkanca <- mieszkania[,3]/ludnosc[,3]/1000
 koszty_eksploatacji_mieszkanNaM2 <- koszty_eksploatacji_mieszkan[,51]
-zalgeloscWOplatachNamieszkancaWzgledemSpoldzielniMieskzniowychNaMIeszkanca <- zaleglosciWOplatach[,4]/ludnosc[,3])
+zalgeloscWOplatachNamieszkancaWzgledemSpoldzielniMieskzniowychNaMIeszkanca <- zaleglosciWOplatach[,4]/ludnosc[,3]
 x <- cbind(zalgeloscWOplatachNamieszkancaWzgledemSpoldzielniMieskzniowychNaMIeszkanca, powierzchniaNaMieszkanca, koszty_eksploatacji_mieszkanNaM2)
 x
 options(OutDec=",")
