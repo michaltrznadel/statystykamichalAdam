@@ -12,7 +12,6 @@
 
 dane_csv <- read.csv2(file.choose(), header=T, sep = ";", dec=",", fileEncoding = 'UTF-8')
 dane <- t(dane_csv)
-dane <- 0
 colnames(dane) <- c("Stopa bezrobocia", "Nowe miejsca pracy", "Przedszkola", "Absolwenci")
 rownames(dane) <- c("2010", "2011", "2012", "2013", "2014", "2015")
 

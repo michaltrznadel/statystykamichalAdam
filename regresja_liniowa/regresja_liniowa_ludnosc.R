@@ -13,7 +13,7 @@ praca <- c(praca_csv$liczba.nowo.utworzonych.miejsc.pracy.)
 #regresja liniowa
 reg_lin <- lm(ludnosc_20_24 ~ wynagrodzenia + praca)
 summary(reg_lin)
-biplot(reg_lin)
+plot(reg_lin)
 
  # Call:
  #   lm(formula = ludnosc_20_24 ~ wynagrodzenia + praca)
