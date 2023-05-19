@@ -2,13 +2,13 @@ library(clusterSim)
 
 # Wczytanie zbioru danych
 koszty_eksploatacji_mieszkan <-read.csv2(file.choose(), header=T, sep = ";", dec=",", fileEncoding = 'UTF-8')
-mieszkania <-read.csv2(file.choose(), header=T, sep = ";", dec=",", fileEncoding = 'UTF-8')
-wojewodztwa <- mieszkania[,2]
+Powierzchniamieszkalna <-read.csv2(file.choose(), header=T, sep = ";", dec=",", fileEncoding = 'UTF-8')
+wojewodztwa <- Powierzchniamieszkalna[,2]
 
 ludnosc <-read.csv2(file.choose(), header=T, sep = ";", dec=",", fileEncoding = 'UTF-8')
 zaleglosciWOplatach <-read.csv2(file.choose(), header=T, sep = ";", dec=",", fileEncoding = 'UTF-8')
 
-powierzchniaNaMieszkanca <- mieszkania[,3]/ludnosc[,3]/1000
+powierzchniaNaMieszkanca <- Powierzchniamieszkalna[,3]/ludnosc[,3]/1000
 koszty_eksploatacji_mieszkanNaM2 <- koszty_eksploatacji_mieszkan[,51]
 zalgeloscWOplatachNamieszkancaWzgledemSpoldzielniMieskzniowychNaMIeszkanca <- zaleglosciWOplatach[,4]/ludnosc[,3]
 
