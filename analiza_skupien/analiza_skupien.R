@@ -1,12 +1,12 @@
 library(clusterSim)
 
 # Wczytanie zbioru danych
-koszty_eksploatacji_mieszkan <-read.csv2("C:/statystykamichalAdam/analiza_skupien/koszty_eksploatacji_mieszkan2020.csv", header=TRUE, fileEncoding="UTF-8")
-mieszkania <-read.csv2("C:/statystykamichalAdam/analiza_skupien/Powierzchniamieszkalna2020.csv", header=TRUE, fileEncoding="UTF-8")
+koszty_eksploatacji_mieszkan <-read.csv2(file.choose(), header=T, sep = ";", dec=",", fileEncoding = 'UTF-8')
+mieszkania <-read.csv2(file.choose(), header=T, sep = ";", dec=",", fileEncoding = 'UTF-8')
 wojewodztwa <- mieszkania[,2]
 
-ludnosc <-read.csv2("C:/statystykamichalAdam/analiza_skupien/LUDN_2020.csv", header=TRUE, fileEncoding="UTF-8")
-zaleglosciWOplatach <-read.csv2("C:/statystykamichalAdam/analiza_skupien/GOSP_zaleglosci_w_oplatach_2020.csv", header=TRUE, fileEncoding="UTF-8")
+ludnosc <-read.csv2(file.choose(), header=T, sep = ";", dec=",", fileEncoding = 'UTF-8')
+zaleglosciWOplatach <-read.csv2(file.choose(), header=T, sep = ";", dec=",", fileEncoding = 'UTF-8')
 
 powierzchniaNaMieszkanca <- mieszkania[,3]/ludnosc[,3]/1000
 koszty_eksploatacji_mieszkanNaM2 <- koszty_eksploatacji_mieszkan[,51]
